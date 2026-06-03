@@ -41,28 +41,7 @@
       aria-expanded="false"
       aria-controls="navbarMenu"
       type="button"
-    >
-      <svg
-        aria-hidden="true"
-        focusable="false"
-        class="navbar__burger-ikon navbar__burger-ikon--aaben"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <use href="#menu"></use>
-      </svg>
-      <svg
-        aria-hidden="true"
-        focusable="false"
-        class="navbar__burger-ikon navbar__burger-ikon--luk"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-      >
-        <use href="#close"></use>
-      </svg>
-    </button>
+    ></button>
 
     <div id="navbarMenu" class="navbar__menu"></div>
   </nav>
@@ -75,23 +54,14 @@
     <section class="formular-ramme">
         <!-- Kort introtekst for formularen. -->
         <h2 class="formular-overskrift">Din oplevelse hos Grocott Fysioterapi</h2>
-        <p class="hjaelpetekst">Jeg sætter pris på din feedback!<br>Det tager 2 minutter at udfylde skemaet og det er anonymt, medmindre du selv skriver <span>dit navn eller e-mail.</span></p>
+        <p class="hjaelpetekst">Jeg sætter pris på din feedback!<br>Det tager <b>kun</b> 2 minutter at udfylde skemaet og det er anonymt, medmindre du selv skriver <span>dit navn eller e-mail.</span></p>
       
         <!-- Fieldset + legend grupperer spørgsmål semantisk for bedre tilgængelighed - ikke påkrævet udfyldt. -->
         <form id="evalueringsSkema" novalidate>
-        <fieldset class="formular-del">
-          <legend>Kontaktoplysninger (valgfrit)</legend>
-          <p class="hjaelpetekst">Udfyld gerne dit navn og e-mail.</p>
-          <label for="navn">Dit navn</label>
-          <input id="navn" type="text" name="navn" autocomplete="name" placeholder="Fx Anne Jensen">
-
-          <label for="email">Din e-mail</label>
-          <input id="email" type="email" name="email" autocomplete="email" placeholder="fx@eksempel.dk">
-        </fieldset>
 
         <fieldset class="formular-del">
           <legend>Modtagelse og service</legend>
-          <p class="hjaelpetekst">Hvor tilfreds var du med modtagelsen i klinikken og den generelle service?<br>Vælg venligst en mulighed.</p>
+          <p class="hjaelpetekst">Hvor tilfreds var du med velkomsten og den generelle service i klinikken?<br>Vælg venligst <b>en</b> mulighed.</p>
           <label><input type="radio" name="service" value="1" required> 1 - Ikke tilfreds</label>
           <label><input type="radio" name="service" value="2"> 2 - Mindre tilfreds</label>
           <label><input type="radio" name="service" value="3"> 3 - Neutral</label>
@@ -101,7 +71,7 @@
 
         <fieldset class="formular-del">
           <legend>Faglighed i behandlingen</legend>
-          <p class="hjaelpetekst">Hvor tilfreds var du med undersøgelsen, behandlingen og den samlede professionelle tilgang?<br>Vælg venligst en mulighed.</p>
+          <p class="hjaelpetekst">Hvor tilfreds var du med fagligheden i behandlingen?<br>Vælg venligst <b>en</b> mulighed.</p>
           <label><input type="radio" name="faglighed" value="1" required> 1 - Ikke tilfreds</label>
           <label><input type="radio" name="faglighed" value="2"> 2 - Mindre tilfreds</label>
           <label><input type="radio" name="faglighed" value="3"> 3 - Neutral</label>
@@ -111,7 +81,7 @@
 
         <fieldset class="formular-del">
           <legend>Kommunikation og forklaring</legend>
-          <p class="hjaelpetekst">Hvor tilfreds var du med kommunikationen og forklaringen af plan og de næste skridt i forløbet?<br>Vælg venligst en mulighed.</p>
+          <p class="hjaelpetekst">Hvor tilfreds var du med kommunikationen?<br>Vælg venligst <b>en</b> mulighed.</p>
           <label><input type="radio" name="kommunikation" value="1" required> 1 - Ikke tilfreds</label>
           <label><input type="radio" name="kommunikation" value="2"> 2 - Mindre tilfreds</label>
           <label><input type="radio" name="kommunikation" value="3"> 3 - Neutral</label>
@@ -121,7 +91,7 @@
 
         <fieldset class="formular-del">
           <legend>Øvelser og behandling</legend>
-          <p class="hjaelpetekst">Hvor tilfreds er du med øvelser, behandling og råd, og er de tilpasset til din hverdag?<br>Vælg venligst en mulighed.</p>
+          <p class="hjaelpetekst">Hvor tilfreds er du med øvelser, behandlingen og vejledningen?<br>Vælg venligst <b>en</b> mulighed.</p>
           <label><input type="radio" name="vejledning" value="1" required> 1 - Ikke tilfreds</label>
           <label><input type="radio" name="vejledning" value="2"> 2 - Mindre tilfreds</label>
           <label><input type="radio" name="vejledning" value="3"> 3 - Neutral</label>
@@ -130,22 +100,15 @@
         </fieldset>
 
         <fieldset class="formular-del">
-          <legend>Hvad fungerede godt? (Valgfrit)</legend>
-          <p class="hjaelpetekst">Skriv gerne hvad der fungerede bedst for dig i dit forløb.</p>
+          <legend>Har du lyst til at uddybe din oplevelse? (Valgfrit)</legend>
+          <p class="hjaelpetekst">Her kan du uddybe din feedback med os med dine egne ord. <br>Det er <b>valgfrit</b> at udfylde dette felt.</p>
           <label for="det-virkede-godt">Din feedback</label>
           <textarea id="det-virkede-godt" name="positivFeedback" rows="4"></textarea>
         </fieldset>
 
         <fieldset class="formular-del">
-          <legend>Hvad kan vi forbedre? (Valgfrit)</legend>
-          <p class="hjaelpetekst">Skriv gerne konkrete forslag til hvad vi kan gøre bedre næste gang.</p>
-          <label for="kan-forbedres">Din feedback</label>
-          <textarea id="kan-forbedres" name="forbedringsFeedback" rows="4"></textarea>
-        </fieldset>
-
-        <fieldset class="formular-del">
           <legend>Hvor sandsynligt er det, at du vil anbefale os til andre?</legend>
-          <p class="hjaelpetekst">Vælg venligst en mulighed.</p>
+          <p class="hjaelpetekst">Vælg venligst <b>en</b> mulighed.</p>
           <label><input type="radio" name="anbefaling" value="nej" required> 1 - Ikke sandsynligt</label>
           <label><input type="radio" name="anbefaling" value="maaske"> 2 - Lidt sandsynligt</label>
           <label><input type="radio" name="anbefaling" value="ja"> 3 - Meget sandsynligt</label>
@@ -153,17 +116,28 @@
 
         <fieldset class="formular-del">
           <legend>Tilladelse til visning af anmeldelse</legend>
-            <p class="hjaelpetekst">Må jeg bruge din feedback på klinikkens hjemmesiden? <br>Vælg venligst en mulighed.</p>
+            <p class="hjaelpetekst">Må jeg bruge din feedback på klinikkens hjemmesiden? <br>Vælg venligst <b>en</b> mulighed.</p>
+
+          <label>
+            <input type="radio" name="hjemmesideTilladelse" value="nej">
+            Nej, klinikken må ikke bruge min feedback på hjemmesiden
+          </label>
           
           <label>
             <input type="radio" name="hjemmesideTilladelse" value="ja">
             Ja, klinikken må gerne bruge min feedback på hjemmesiden
           </label>
          
-          <label>
-            <input type="radio" name="hjemmesideTilladelse" value="nej">
-            Nej, klinikken må ikke bruge min feedback på hjemmesiden
-          </label>
+        </fieldset>
+
+        <fieldset class="formular-del">
+          <legend>Kontaktoplysninger (valgfrit)</legend>
+          <p class="hjaelpetekst">Udfyld gerne dit navn og e-mail. <br> Hvis du ønsker at være <b>anonym</b>, kan du lade disse felter stå tomme.</p>
+          <label for="navn">Dit navn</label>
+          <input id="navn" type="text" name="navn" autocomplete="name" placeholder="Fx Anne Jensen">
+
+          <label for="email">Din e-mail</label>
+          <input id="email" type="email" name="email" autocomplete="email" placeholder="fx@eksempel.dk">
         </fieldset>
 
         <section class="handlinger" aria-label="Formularhandlinger">
@@ -173,6 +147,103 @@
       </form>
     </section>
   </main>
+
+  <footer class="sidefod">
+    <div class="sidefod__indhold">
+      <div class="sidefod__grid">
+        <div class="sidefod__kolonne sidefod__kolonne--om">
+          <a href="index.html" class="sidefod__logo-wrapper">
+            <img src="assets/logo.svg" alt="Grocott Fysioterapi logo" class="sidefod__logo">
+          </a>
+          <p class="sidefod__beskrivelse">
+            Nicolai Grocott er uddannet fysioterapeut siden 2012 og driver sin egen klinik i hjertet af Langeskov, hvor der er tid til dig og dine behov.
+          </p>
+          <p class="sidefod__cvr">CVR: 40229299</p>
+          <div class="sidefod__ikoner-raekke">
+            <nav class="sidefod__sociale" aria-label="Sociale medier">
+              <a href="https://www.facebook.com/grocottfysioterapi" class="sidefod__sociale-knap" aria-label="Følg mig på Facebook" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/grocott_fys/" class="sidefod__sociale-knap" aria-label="Følg mig på Instagram" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/nicolai-engstr%C3%B8m-grocott-728933164/" class="sidefod__sociale-knap" aria-label="Følg mig på LinkedIn" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </nav>
+            <a href="https://dk.trustpilot.com/review/grocottfys.dk" class="sidefod__trustpilot" target="_blank" rel="noopener noreferrer" aria-label="Se anmeldelser på Trustpilot">
+              <div class="sidefod__trustpilot-info">
+                <span class="sidefod__firmanavn">Grocott Fysioterapi</span>
+                <span class="sidefod__trustpilot-url">Se anmeldelser på Trustpilot →</span>
+              </div>
+              <div class="sidefod__trustpilot-rating">
+                <div class="sidefod__stjerner" aria-hidden="true">
+                  <svg class="sidefod__stjerne" viewBox="0 0 20 19">
+                    <path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"></path>
+                  </svg>
+                  <svg class="sidefod__stjerne" viewBox="0 0 20 19">
+                    <path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"></path>
+                  </svg>
+                  <svg class="sidefod__stjerne" viewBox="0 0 20 19">
+                    <path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"></path>
+                  </svg>
+                  <svg class="sidefod__stjerne" viewBox="0 0 20 19">
+                    <path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"></path>
+                  </svg>
+                  <svg class="sidefod__stjerne" viewBox="0 0 20 19">
+                    <defs>
+                      <linearGradient id="tp-partial">
+                        <stop offset="60%" stop-color="#00B67A"></stop>
+                        <stop offset="60%" stop-color="#DCDCE6"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="url(#tp-partial)"></path>
+                  </svg>
+                </div>
+                <span class="sidefod__rating-tekst">4.6 (26)</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="sidefod__kolonne">
+          <h3 class="sidefod__overskrift">Åbningstider</h3>
+          <p><strong>Mandag-fredag:</strong><br>8-16</p>
+          <p><strong>Lørdag og søndag:</strong><br>Efter behov</p>
+        </div>
+
+        <div class="sidefod__kolonne">
+          <h3 class="sidefod__overskrift">Kontakt</h3>
+          <p><strong>Telefon:</strong><br><a href="tel:60866770" class="sidefod__link">60 86 67 70</a></p>
+          <p>
+            <strong>E-mail:</strong><br><a href="mailto:nicolai@grocottfys.dk" class="sidefod__link">nicolai@grocottfys.dk</a>
+          </p>
+          <p><strong>Adresse:</strong><br>Langeskov Centret 1, butik 3<br>5550 Langeskov</p>
+          <p class="sidefod__cvr">CVR: 40229299</p>
+        </div>
+
+        <div class="sidefod__kolonne">
+          <h3 class="sidefod__overskrift">Praktisk information</h3>
+          <ul class="sidefod__liste">
+            <li><a href="#" class="sidefod__link">Afbudspolitik</a></li>
+            <li><a href="#" class="sidefod__link">Betingelser</a></li>
+            <li><a href="#" class="sidefod__link">Privatliv</a></li>
+            <li><a href="#" class="sidefod__link">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- Popup vises kun ved succesfuld validering og submit. -->
   <div id="feedbackPopup" class="feedbackPopup feedbackPopup--skjult" role="dialog" aria-modal="true" aria-labelledby="feedbackTitel" aria-describedby="feedbackTekst">

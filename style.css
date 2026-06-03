@@ -13,6 +13,9 @@
   --system-red: #E03838;
   --radius: 8px;
   --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-48: 3rem;
   --space-56: 3.5rem;
   --page-gutter: var(--space-16);
 }
@@ -28,6 +31,11 @@ body {
   color: var(--neutral-100);
   background: var(--neutral-400);
   line-height: 1.5;
+}
+
+b {
+    font-weight: 700;
+    color: var(--blue-100);
 }
 
 /* Navigation */
@@ -64,22 +72,50 @@ body {
   border: none;
   background: none;
   cursor: pointer;
+  padding: 2px;
+  background-image: linear-gradient(var(--blue-100), var(--blue-100));
+  background-repeat: no-repeat;
+  background-size: 18px 2px;
+  background-position: center;
+  transition: background-size 0.2s ease;
 }
 
-.navbar__burger-ikon {
-  color: var(--blue-100);
-}
-
-.navbar__burger-ikon--luk {
+.navbar__burger svg {
   display: none;
 }
 
-.navbar__burger.active .navbar__burger-ikon--aaben {
-  display: none;
+.navbar__burger::before,
+.navbar__burger::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background-color: var(--blue-100);
+  transform-origin: center;
+  transition: transform 0.25s ease;
 }
 
-.navbar__burger.active .navbar__burger-ikon--luk {
-  display: block;
+.navbar__burger::before {
+  transform: translate(-50%, calc(-6px - 50%));
+}
+
+.navbar__burger::after {
+  transform: translate(-50%, calc(6px - 50%));
+}
+
+.navbar__burger.active {
+  background-size: 0 2px;
+}
+
+.navbar__burger.active::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.navbar__burger.active::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .navbar__menu {
@@ -165,7 +201,7 @@ main {
   background-repeat: no-repeat;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  min-height: clamp(140px, 25vw, 300px);
+  min-height: clamp(180px, 25vw, 300px);
   border-radius: 0;
   padding: 1.5rem 1rem;
   margin-bottom: 1rem;
@@ -390,6 +426,196 @@ label:has(input[type="checkbox"]:checked) {
   margin-right: auto;
 }
 
+/* Footer */
+.sidefod {
+  background-color: var(--blue-300);
+  padding: var(--space-56) var(--page-gutter) var(--space-56);
+}
+
+.sidefod__indhold {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.sidefod__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.sidefod__logo-wrapper {
+  display: inline-block;
+  order: 1;
+}
+
+.sidefod__logo {
+  height: 44px;
+  width: auto;
+}
+
+.sidefod__kolonne--om {
+  display: contents;
+}
+
+.sidefod__beskrivelse {
+  display: none;
+}
+
+.sidefod__kolonne--om > .sidefod__cvr {
+  display: none;
+}
+
+.sidefod__grid > :nth-child(3) {
+  order: 2;
+}
+
+.sidefod__grid > :nth-child(2) {
+  order: 3;
+}
+
+.sidefod__grid > :nth-child(4) {
+  order: 4;
+}
+
+.sidefod__overskrift {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--neutral-100);
+  margin: 0 0 0.5rem;
+}
+
+.sidefod__kolonne p {
+  font-size: 0.95rem;
+  color: var(--neutral-100);
+  line-height: 1.65;
+  margin: 0 0 0.25rem;
+}
+
+.sidefod__liste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidefod__link {
+  color: var(--blue-100);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: text-decoration 0.2s;
+}
+
+.sidefod__link:hover {
+  text-decoration: underline;
+}
+
+.sidefod__firmanavn {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--neutral-100);
+  margin: 0;
+}
+
+.sidefod__beskrivelse {
+  font-size: 0.875rem;
+  color: var(--neutral-100);
+  line-height: 1.6;
+  margin: var(--space-16) 0 0;
+}
+
+.sidefod__cvr {
+  font-size: 0.875rem;
+  color: var(--neutral-100);
+  margin: 0.25rem 0 var(--space-16);
+}
+
+.sidefod__ikoner-raekke {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  order: 5;
+}
+
+.sidefod__ikoner-raekke > .sidefod__sociale {
+  order: 2;
+}
+
+.sidefod__trustpilot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidefod__trustpilot:hover .sidefod__rating-tekst {
+  text-decoration: underline;
+}
+
+.sidefod__trustpilot-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidefod__trustpilot-url {
+  font-size: 0.8rem;
+  color: var(--neutral-100);
+  text-decoration: underline;
+}
+
+.sidefod__trustpilot-rating {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.sidefod__stjerner {
+  display: flex;
+  gap: 3px;
+}
+
+.sidefod__stjerne {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.sidefod__rating-tekst {
+  font-size: 0.9rem;
+  color: var(--neutral-100);
+}
+
+.sidefod__sociale {
+  display: flex;
+  gap: var(--space-16);
+}
+
+.sidefod__sociale-knap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background-color: var(--blue-100);
+  color: var(--neutral-400);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.sidefod__sociale-knap svg {
+  width: 24px;
+  height: 24px;
+}
+
 /* Tablet */
 @media (min-width: 700px) {
   .navbar {
@@ -469,6 +695,57 @@ label:has(input[type="checkbox"]:checked) {
   .knap {
     width: auto;
   }
+
+  .sidefod__kolonne--om {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+  }
+
+  .sidefod__grid {
+    flex-direction: row;
+    gap: var(--space-48);
+    align-items: flex-start;
+  }
+
+  .sidefod__kolonne {
+    flex: 1;
+  }
+
+  .sidefod__logo-wrapper {
+    order: 0;
+  }
+
+  .sidefod__beskrivelse {
+    display: block;
+    margin: 0;
+  }
+
+  .sidefod__kolonne--om > .sidefod__cvr {
+    display: block;
+    margin: 0;
+  }
+
+  .sidefod__grid > :nth-child(2),
+  .sidefod__grid > :nth-child(3),
+  .sidefod__grid > :nth-child(4) {
+    order: 0;
+  }
+
+  .sidefod__ikoner-raekke {
+    order: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .sidefod__ikoner-raekke > .sidefod__sociale {
+    order: 0;
+  }
+
+  .sidefod__grid > :nth-child(3) > .sidefod__cvr {
+    display: none;
+  }
 }
 
 /* Desktop */
@@ -526,5 +803,20 @@ label:has(input[type="checkbox"]:checked) {
   .navbar__menu-link:not(:last-child):hover::after {
     opacity: 1;
     transform: scaleX(1);
+  }
+
+  .sidefod {
+    padding-top: var(--space-24);
+  }
+
+  .sidefod__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-48);
+    align-items: start;
+  }
+
+  .sidefod__kolonne {
+    flex: unset;
   }
 }
