@@ -1,16 +1,17 @@
 # eksamenforbedringp5
-Dette repository indeholder min forbedring til mit eksamensprojekt på 2. semester på Multimedieuddannelsen på UCL i Odense
+Dette repository indeholder en forbedret version af mit eksamensprojekt fra 2. semester på Multimedieuddannelsen (UCL Odense).
 
 ## Evalueringsskema (Grocott Fysioterapi)
 
-Projektet indeholder nu en simpel frontend-prototype af et evalueringsskema bygget med HTML, CSS og JavaScript.
+Projektet er en frontend-løsning bygget med HTML, CSS og JavaScript.
 
 ### Filer
 
-- `index.html`: Semantisk struktur med formularfelter, navigation og succes-popup
-- `style.css`: Farver, layout, responsive breakpoints og komponent-styles
-- `burgermenu.js`: Dynamisk menuindhold og burger-menu interaktion
-- `formular.js`: Enkel submit-flow med native validering og popup ved succes
+- `index.html`: Evalueringsformular med navigation og footer
+- `tak-for-feedback.html`: Takkeside efter gyldig submit
+- `style.css`: Styling, layout og responsive breakpoints
+- `burgermenu.js`: Dynamisk burger-menu
+- `formular.js`: Submit-flow med native validering og redirect til takkesiden
 
 ### Noter til koden
 
@@ -22,7 +23,7 @@ Projektet indeholder nu en simpel frontend-prototype af et evalueringsskema bygg
 
 1. Åbn `index.html` i din browser.
 2. Udfyld formularen og test native validering.
-3. Ved gyldig submit vises popup-beskeden.
+3. Ved gyldig submit videresendes brugeren til `tak-for-feedback.html`.
 
 ### Næste skridt
 
