@@ -1,5 +1,5 @@
 :root {
-  /* Farve- og spacing-tokens. */
+  /* Design tokens: centrale værdier genbruges i hele filen for konsistent stil. */
   --blue-100: #194470;
   --blue-200: #30B1D9;
   --blue-300: #D1E2EB;
@@ -20,7 +20,7 @@
   --page-gutter: var(--space-16);
 }
 
-/* Baseline layout */
+/* Baseline layout: fælles reset/grundregler før komponenter. */
 * {
   box-sizing: border-box;
 }
@@ -34,11 +34,12 @@ body {
 }
 
 b {
-    font-weight: 700;
-    color: var(--blue-100);
+  /* Fremhævelse i brødtekst (bruges fx i hjælpetekster i formularen). */
+  font-weight: 700;
+  color: var(--blue-100);
 }
 
-/* Navigation */
+/* Navigation: sticky topbar med logo, burgerknap og dropdown-menu. */
 .navbar {
   position: sticky;
   top: 0;
@@ -47,6 +48,7 @@ b {
   align-items: center;
   justify-content: center;
   padding: 14px var(--page-gutter);
+  /* Position context bruges af absolut-positioneret burgerknap/menu. */
   position: relative;
   background-color: var(--blue-300);
   backdrop-filter: blur(10px);
@@ -73,6 +75,7 @@ b {
   background: none;
   cursor: pointer;
   padding: 2px;
+  /* Midterste streg i burger-ikonet tegnes som baggrund. */
   background-image: linear-gradient(var(--blue-100), var(--blue-100));
   background-repeat: no-repeat;
   background-size: 18px 2px;
@@ -80,12 +83,9 @@ b {
   transition: background-size 0.2s ease;
 }
 
-.navbar__burger svg {
-  display: none;
-}
-
 .navbar__burger::before,
 .navbar__burger::after {
+  /* Øverste + nederste streg i burgerikonet tegnes som pseudo-elementer. */
   content: "";
   position: absolute;
   left: 50%;
@@ -107,18 +107,22 @@ b {
 }
 
 .navbar__burger.active {
+  /* Når menuen er aktiv skjules midterstregen, så krydset kan vises rent. */
   background-size: 0 2px;
 }
 
 .navbar__burger.active::before {
+  /* Øverste streg roteres til et kryds. */
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .navbar__burger.active::after {
+  /* Nederste streg roteres modsat til et kryds. */
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .navbar__menu {
+  /* Mobilmenu starter skjult og foldes ud via .active-klassen fra JS. */
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -137,6 +141,7 @@ b {
 }
 
 .navbar__menu.active {
+  /* Aktiv state: menu bliver synlig/klikbar. */
   display: flex;
   max-height: 520px;
   opacity: 1;
@@ -158,6 +163,7 @@ b {
 }
 
 .navbar__menu-link::after {
+  /* Underline-animation ved hover på desktop. */
   content: "";
   position: absolute;
   left: 0;
@@ -186,12 +192,13 @@ b {
 }
 
 main {
+  /* Standard-indholdsbredde for almindelige sider (formular-siden). */
   max-width: 760px;
   margin: 0 auto;
   padding: 0 1rem 2rem;
 }
 
-/* Hero */
+/* Hero: bred topsektion med baggrundsbillede og overlay. */
 .hero {
   background:
     linear-gradient(180deg, rgba(25, 68, 112, 0.88), rgba(25, 68, 112, 0.78)),
@@ -208,18 +215,6 @@ main {
   display: grid;
   align-content: center;
   text-align: left;
-}
-
-.hero p:first-child {
-  margin: 0 0 0.4rem;
-  width: min(75%, 680px);
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--blue-300);
-  font-size: 0.85rem;
 }
 
 h1 {
@@ -245,15 +240,7 @@ h3 {
   color: var(--blue-100);
 }
 
-.hero p:last-child {
-  width: min(75%, 680px);
-  max-width: 72ch;
-  color: var(--neutral-400);
-  opacity: 0.95;
-  margin: 0 auto;
-}
-
-/* Formular */
+/* Formular: card, felter, radio-grupper og CTA-knap. */
 .formular-ramme {
   border: 1px solid var(--neutral-300);
   border-radius: var(--radius);
@@ -280,11 +267,11 @@ textarea:focus {
 
 input:invalid,
 textarea:invalid {
+  /* Rød kant hjælper brugeren med at identificere ugyldige felter. */
   border-color: var(--system-red);
 }
 
-input[type="radio"],
-input[type="checkbox"] {
+input[type="radio"] {
   width: auto;
   padding: 0;
   margin: 0 0.35rem 0 0;
@@ -323,8 +310,8 @@ label {
   margin: 0.42rem 0;
 }
 
-label:has(input[type="radio"]),
-label:has(input[type="checkbox"]) {
+label:has(input[type="radio"]) {
+  /* Klikbart "kort" omkring radio-option gør UX tydeligere. */
   display: flex;
   align-items: center;
   width: 100%;
@@ -335,12 +322,13 @@ label:has(input[type="checkbox"]) {
   background: var(--neutral-400);
 }
 
-label:has(input[type="radio"]:checked),
-label:has(input[type="checkbox"]:checked) {
+label:has(input[type="radio"]:checked) {
+  /* Visuel selected-state for valgt radio. */
   border-color: var(--blue-200);
   background: rgba(48, 177, 217, 0.12);
 }
 
+/* Takkeside: centrering af kort samt synlig top af footer. */
 .tak-side {
   min-height: calc(100vh - 84px - 72px);
   display: grid;
@@ -354,6 +342,7 @@ label:has(input[type="checkbox"]:checked) {
 }
 
 .tak-kort__ikon {
+  /* Cirkulært succes-ikon med en rolig ind-animation. */
   width: 64px;
   height: 64px;
   margin: 0 auto 0.8rem;
@@ -371,6 +360,7 @@ label:has(input[type="checkbox"]:checked) {
 }
 
 @keyframes takIkonInd {
+  /* Fra let zoom/transparent til fuldt synligt ikon. */
   from {
     opacity: 0;
     transform: scale(0.8);
@@ -382,6 +372,7 @@ label:has(input[type="checkbox"]:checked) {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Tilgængelighed: fjern animation for brugere med motion-præference. */
   .tak-kort__ikon {
     animation: none;
   }
@@ -397,11 +388,6 @@ label:has(input[type="checkbox"]:checked) {
   max-width: 58ch;
 }
 
-.tak-kort__knap {
-  display: inline-flex;
-  text-decoration: none;
-}
-
 .handlinger {
   margin-top: 0.55rem;
   text-align: center;
@@ -414,6 +400,7 @@ label:has(input[type="checkbox"]:checked) {
 }
 
 .knap {
+  /* Fælles knapkomponent med minimum-højde for touch-venlighed. */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -439,7 +426,7 @@ label:has(input[type="checkbox"]:checked) {
   background-color: var(--orange-200);
 }
 
-/* Footer */
+/* Footer: mobil-first struktur med re-ordering af kolonner. */
 .sidefod {
   background-color: var(--blue-300);
   padding: var(--space-56) var(--page-gutter) var(--space-56);
@@ -482,14 +469,17 @@ label:has(input[type="checkbox"]:checked) {
 }
 
 .sidefod__grid > :nth-child(3) {
+  /* Flytter kontakt-kolonnen op i mobilrækkefølgen. */
   order: 2;
 }
 
 .sidefod__grid > :nth-child(2) {
+  /* Flytter åbningstider efter kontakt på mobil. */
   order: 3;
 }
 
 .sidefod__grid > :nth-child(4) {
+  /* Praktisk information vises sidst i mobilflow. */
   order: 4;
 }
 
@@ -629,7 +619,7 @@ label:has(input[type="checkbox"]:checked) {
   height: 24px;
 }
 
-/* Tablet */
+/* Tablet breakpoint: mere luft, større typografi og footer i kolonner. */
 @media (min-width: 700px) {
   .navbar {
     justify-content: space-between;
@@ -680,6 +670,7 @@ label:has(input[type="checkbox"]:checked) {
   }
 
   main {
+    /* Øger side-luft på større skærme. */
     margin: 0 auto;
     padding: 0 1.5rem 2.5rem;
   }
@@ -716,6 +707,7 @@ label:has(input[type="checkbox"]:checked) {
   }
 
   .sidefod__grid {
+    /* Skifter footer fra vertikal stack til horisontal layoutretning. */
     flex-direction: row;
     gap: var(--space-48);
     align-items: flex-start;
@@ -761,7 +753,7 @@ label:has(input[type="checkbox"]:checked) {
   }
 }
 
-/* Desktop */
+/* Desktop breakpoint: fuld topmenu og grid-baseret footer. */
 @media (min-width: 1095px) {
   :root {
     --page-gutter: var(--space-56);
@@ -773,6 +765,7 @@ label:has(input[type="checkbox"]:checked) {
   }
 
   .navbar__burger {
+    /* Burger skjules, da menu vises direkte på desktop. */
     display: none;
   }
 
@@ -823,6 +816,7 @@ label:has(input[type="checkbox"]:checked) {
   }
 
   .sidefod__grid {
+    /* Stabil 4-kolonners footer på desktop. */
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: var(--space-48);

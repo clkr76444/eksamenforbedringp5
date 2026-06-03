@@ -1,33 +1,32 @@
 <!doctype html>
 <html lang="da">
 <head>
+  <!-- Grundlæggende metadata for dansk side og mobilvenlig visning. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Titel i browser-fanen. -->
   <title>Tak for din feedback - Grocott Fysioterapi</title>
 
+  <!-- Sideikon i browseren. -->
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 
+  <!-- Forbindelser åbnes tidligt for hurtigere font-load. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Samme font som resten af sitet for visuel konsistens. -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Fælles styles til alle sider. -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- Burger-menu script genbruges også på takkesiden. -->
   <script src="burgermenu.js" defer></script>
 </head>
 
 <body>
-  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
-    <symbol id="menu" viewBox="0 0 24 24">
-      <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
-    </symbol>
-    <symbol id="close" viewBox="0 0 24 24">
-      <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
-    </symbol>
-  </svg>
-
+  <!-- Topnavigation med logo, burgerknap og dynamisk menu-container. -->
   <nav class="navbar" aria-label="Hovednavigation">
     <a href="index.html">
       <img src="assets/logo.svg" alt="Grocott Fysioterapi logo" class="navbar__logo">
@@ -44,8 +43,11 @@
     <div id="navbarMenu" class="navbar__menu"></div>
   </nav>
 
+  <!-- Hovedsektion med visuelt tak-kort efter formularsubmit. -->
   <main class="tak-side">
+    <!-- aria-labelledby kobler sektionen til overskriften for skærmlæsere. -->
     <section class="formular-ramme tak-kort" aria-labelledby="tak-overskrift">
+      <!-- Ikonisk succes-markering. aria-hidden skjuler dekorativ grafik for assistive tech. -->
       <div class="tak-kort__ikon" aria-hidden="true">
         <svg viewBox="0 0 24 24" focusable="false">
           <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -59,9 +61,11 @@
     </section>
   </main>
   
+  <!-- Samme footer som forsiden for ensartet navigation og information. -->
   <footer class="sidefod">
     <div class="sidefod__indhold">
       <div class="sidefod__grid">
+        <!-- Om- og branding-kolonne. -->
         <div class="sidefod__kolonne sidefod__kolonne--om">
           <a href="index.html" class="sidefod__logo-wrapper">
             <img src="assets/logo.svg" alt="Grocott Fysioterapi logo" class="sidefod__logo">
@@ -127,12 +131,14 @@
           </div>
         </div>
 
+        <!-- Åbningstider. -->
         <div class="sidefod__kolonne">
           <h3 class="sidefod__overskrift">Åbningstider</h3>
           <p><strong>Mandag-fredag:</strong><br>8-16</p>
           <p><strong>Lørdag og søndag:</strong><br>Efter behov</p>
         </div>
 
+        <!-- Kontaktoplysninger. -->
         <div class="sidefod__kolonne">
           <h3 class="sidefod__overskrift">Kontakt</h3>
           <p><strong>Telefon:</strong><br><a href="tel:60866770" class="sidefod__link">60 86 67 70</a></p>
@@ -143,6 +149,7 @@
           <p class="sidefod__cvr">CVR: 40229299</p>
         </div>
 
+        <!-- Praktiske links. -->
         <div class="sidefod__kolonne">
           <h3 class="sidefod__overskrift">Praktisk information</h3>
           <ul class="sidefod__liste">

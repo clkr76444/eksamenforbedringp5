@@ -1,35 +1,33 @@
 <!doctype html>
 <html lang="da">
 <head>
+  <!-- Grundlæggende metadata for tegnsætning og responsivt layout. -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Browserfane-titel. -->
   <title>Evalueringsskema - Grocott Fysioterapi</title>
 
+  <!-- Favicon til fanen. -->
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 
+  <!-- Tidlig forbindelse til Google Fonts for hurtigere font-load. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Primær webfont for hele siden. -->
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Fælles stylesheet for layout, komponenter og responsive breakpoints. -->
   <link rel="stylesheet" href="style.css">
 
+  <!-- JS til burgernavigation og formular-flow. defer = kør først efter HTML er parset. -->
   <script src="burgermenu.js" defer></script>
   <script src="formular.js" defer></script>
 </head>
 
 <body>
-  <!-- SVG-symboler bruges af burgerikonet i navigationen. -->
-  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
-    <symbol id="menu" viewBox="0 0 24 24">
-      <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
-    </symbol>
-    <symbol id="close" viewBox="0 0 24 24">
-      <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
-    </symbol>
-  </svg>
-
+  <!-- Topnavigation med logo, burgerknap og en tom container som udfyldes af JS. -->
   <nav class="navbar" aria-label="Hovednavigation">
     <a href="index.html">
       <img src="assets/logo.svg" alt="Grocott Fysioterapi logo" class="navbar__logo">
@@ -46,19 +44,21 @@
     <div id="navbarMenu" class="navbar__menu"></div>
   </nav>
 
+  <!-- Hovedindhold: hero + evalueringsformular. -->
   <main>
     <header class="hero">
       <h1>Evalueringsskema</h1>
     </header>
 
     <section class="formular-ramme">
-        <!-- Kort introtekst for formularen. -->
+        <!-- Introduktion som forklarer formål, varighed og anonymitet. -->
         <h2 class="formular-overskrift">Din oplevelse hos Grocott Fysioterapi</h2>
         <p class="hjaelpetekst">Jeg sætter pris på din feedback!<br>Det tager <b>kun</b> 2 minutter at udfylde skemaet og det er anonymt, medmindre du selv skriver <span>dit navn eller e-mail.</span></p>
       
-        <!-- Fieldset + legend grupperer spørgsmål semantisk for bedre tilgængelighed - ikke påkrævet udfyldt. -->
+        <!-- Formular sender til takkesiden. Validering håndteres i formular.js før redirect. -->
         <form id="evalueringsSkema" action="tak-for-feedback.html" method="get">
 
+        <!-- Valgfri identifikation. Felterne kan stå tomme ved anonym feedback. -->
         <fieldset class="formular-del">
           <legend>Kontaktoplysninger (valgfrit)</legend>
           <p class="hjaelpetekst">Udfyld gerne dit navn og e-mail. <br> Hvis du ønsker at være <b>anonym</b>, kan du lade disse felter stå tomme.</p>
@@ -69,6 +69,7 @@
           <input id="email" type="email" name="email" autocomplete="email" placeholder="fx@eksempel.dk">
         </fieldset>
 
+        <!-- Samtykke til evt. visning af anmeldelse på hjemmesiden. -->
         <fieldset class="formular-del">
           <legend>Tilladelse til visning af anmeldelse</legend>
             <p class="hjaelpetekst">Må jeg bruge din feedback på klinikkens hjemmesiden? <br>Vælg venligst <b>en</b> mulighed.</p>
@@ -84,6 +85,7 @@
           </label>
         </fieldset>
 
+        <!-- Obligatorisk ratingspørgsmål: service. -->
         <fieldset class="formular-del">
           <legend>Modtagelse og service</legend>
           <p class="hjaelpetekst">Hvor tilfreds var du med velkomsten og den generelle service i klinikken?<br>Vælg venligst <b>en</b> mulighed.</p>
@@ -94,6 +96,7 @@
           <label><input type="radio" name="service" value="5"> 5 - Meget tilfreds</label>
         </fieldset>
 
+        <!-- Obligatorisk ratingspørgsmål: faglighed. -->
         <fieldset class="formular-del">
           <legend>Faglighed i behandlingen</legend>
           <p class="hjaelpetekst">Hvor tilfreds var du med fagligheden i behandlingen?<br>Vælg venligst <b>en</b> mulighed.</p>
@@ -104,6 +107,7 @@
           <label><input type="radio" name="faglighed" value="5"> 5 - Meget tilfreds</label>
         </fieldset>
 
+        <!-- Obligatorisk ratingspørgsmål: kommunikation. -->
         <fieldset class="formular-del">
           <legend>Kommunikation og forklaring</legend>
           <p class="hjaelpetekst">Hvor tilfreds var du med kommunikationen?<br>Vælg venligst <b>en</b> mulighed.</p>
@@ -114,6 +118,7 @@
           <label><input type="radio" name="kommunikation" value="5"> 5 - Meget tilfreds</label>
         </fieldset>
 
+        <!-- Obligatorisk ratingspørgsmål: øvelser/vejledning. -->
         <fieldset class="formular-del">
           <legend>Øvelser og behandling</legend>
           <p class="hjaelpetekst">Hvor tilfreds er du med øvelser, behandlingen og vejledningen?<br>Vælg venligst <b>en</b> mulighed.</p>
@@ -124,6 +129,7 @@
           <label><input type="radio" name="vejledning" value="5"> 5 - Meget tilfreds</label>
         </fieldset>
 
+        <!-- Obligatorisk anbefalingsspørgsmål. -->
         <fieldset class="formular-del">
           <legend>Hvor sandsynligt er det, at du vil anbefale os til andre?</legend>
           <p class="hjaelpetekst">Vælg venligst <b>en</b> mulighed.</p>
@@ -132,6 +138,7 @@
           <label><input type="radio" name="anbefaling" value="ja"> 3 - Meget sandsynligt</label>
         </fieldset>
 
+        <!-- Fritekstfelt til uddybende kommentarer (valgfrit). -->
         <fieldset class="formular-del">
           <legend>Har du lyst til at uddybe din oplevelse? (Valgfrit)</legend>
           <p class="hjaelpetekst">Her kan du uddybe din feedback med os med dine egne ord. <br>Det er <b>valgfrit</b> at udfylde dette felt.</p>
@@ -139,6 +146,7 @@
           <textarea id="det-virkede-godt" name="positivFeedback" rows="4"></textarea>
         </fieldset>
 
+        <!-- Formularens CTA. -->
         <section class="handlinger" aria-label="Formularhandlinger">
           <button type="submit" class="knap knap--primaer">Send evaluering</button>
         </section>
@@ -147,9 +155,11 @@
     </section>
   </main>
 
+  <!-- Footer med kontaktinfo, sociale links, Trustpilot og praktisk information. -->
   <footer class="sidefod">
     <div class="sidefod__indhold">
       <div class="sidefod__grid">
+        <!-- Om- og branding-kolonne. -->
         <div class="sidefod__kolonne sidefod__kolonne--om">
           <a href="index.html" class="sidefod__logo-wrapper">
             <img src="assets/logo.svg" alt="Grocott Fysioterapi logo" class="sidefod__logo">
@@ -215,12 +225,14 @@
           </div>
         </div>
 
+        <!-- Åbningstider. -->
         <div class="sidefod__kolonne">
           <h3 class="sidefod__overskrift">Åbningstider</h3>
           <p><strong>Mandag-fredag:</strong><br>8-16</p>
           <p><strong>Lørdag og søndag:</strong><br>Efter behov</p>
         </div>
 
+        <!-- Kontaktoplysninger. -->
         <div class="sidefod__kolonne">
           <h3 class="sidefod__overskrift">Kontakt</h3>
           <p><strong>Telefon:</strong><br><a href="tel:60866770" class="sidefod__link">60 86 67 70</a></p>
@@ -231,6 +243,7 @@
           <p class="sidefod__cvr">CVR: 40229299</p>
         </div>
 
+        <!-- Praktiske links. -->
         <div class="sidefod__kolonne">
           <h3 class="sidefod__overskrift">Praktisk information</h3>
           <ul class="sidefod__liste">
