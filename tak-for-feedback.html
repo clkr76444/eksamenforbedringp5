@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Evalueringsskema - Grocott Fysioterapi</title>
+  <title>Tak for din feedback - Grocott Fysioterapi</title>
 
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
 
@@ -16,11 +16,9 @@
   <link rel="stylesheet" href="style.css">
 
   <script src="burgermenu.js" defer></script>
-  <script src="formular.js" defer></script>
 </head>
 
 <body>
-  <!-- SVG-symboler bruges af burgerikonet i navigationen. -->
   <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
     <symbol id="menu" viewBox="0 0 24 24">
       <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"></path>
@@ -46,107 +44,21 @@
     <div id="navbarMenu" class="navbar__menu"></div>
   </nav>
 
-  <main>
-    <header class="hero">
-      <h1>Evalueringsskema</h1>
-    </header>
-
-    <section class="formular-ramme">
-        <!-- Kort introtekst for formularen. -->
-        <h2 class="formular-overskrift">Din oplevelse hos Grocott Fysioterapi</h2>
-        <p class="hjaelpetekst">Jeg sætter pris på din feedback!<br>Det tager <b>kun</b> 2 minutter at udfylde skemaet og det er anonymt, medmindre du selv skriver <span>dit navn eller e-mail.</span></p>
-      
-        <!-- Fieldset + legend grupperer spørgsmål semantisk for bedre tilgængelighed - ikke påkrævet udfyldt. -->
-        <form id="evalueringsSkema" action="tak-for-feedback.html" method="get">
-
-        <fieldset class="formular-del">
-          <legend>Kontaktoplysninger (valgfrit)</legend>
-          <p class="hjaelpetekst">Udfyld gerne dit navn og e-mail. <br> Hvis du ønsker at være <b>anonym</b>, kan du lade disse felter stå tomme.</p>
-          <label for="navn">Dit navn</label>
-          <input id="navn" type="text" name="navn" autocomplete="name" placeholder="Fx Anne Jensen">
-
-          <label for="email">Din e-mail</label>
-          <input id="email" type="email" name="email" autocomplete="email" placeholder="fx@eksempel.dk">
-        </fieldset>
-
-        <fieldset class="formular-del">
-          <legend>Tilladelse til visning af anmeldelse</legend>
-            <p class="hjaelpetekst">Må jeg bruge din feedback på klinikkens hjemmesiden? <br>Vælg venligst <b>en</b> mulighed.</p>
-
-          <label>
-            <input type="radio" name="hjemmesideTilladelse" value="nej">
-            Nej, klinikken må ikke bruge min feedback på hjemmesiden
-          </label>
-          
-          <label>
-            <input type="radio" name="hjemmesideTilladelse" value="ja">
-            Ja, klinikken må gerne bruge min feedback på hjemmesiden
-          </label>
-        </fieldset>
-
-        <fieldset class="formular-del">
-          <legend>Modtagelse og service</legend>
-          <p class="hjaelpetekst">Hvor tilfreds var du med velkomsten og den generelle service i klinikken?<br>Vælg venligst <b>en</b> mulighed.</p>
-          <label><input type="radio" name="service" value="1" required> 1 - Ikke tilfreds</label>
-          <label><input type="radio" name="service" value="2"> 2 - Mindre tilfreds</label>
-          <label><input type="radio" name="service" value="3"> 3 - Neutral</label>
-          <label><input type="radio" name="service" value="4"> 4 - Tilfreds</label>
-          <label><input type="radio" name="service" value="5"> 5 - Meget tilfreds</label>
-        </fieldset>
-
-        <fieldset class="formular-del">
-          <legend>Faglighed i behandlingen</legend>
-          <p class="hjaelpetekst">Hvor tilfreds var du med fagligheden i behandlingen?<br>Vælg venligst <b>en</b> mulighed.</p>
-          <label><input type="radio" name="faglighed" value="1" required> 1 - Ikke tilfreds</label>
-          <label><input type="radio" name="faglighed" value="2"> 2 - Mindre tilfreds</label>
-          <label><input type="radio" name="faglighed" value="3"> 3 - Neutral</label>
-          <label><input type="radio" name="faglighed" value="4"> 4 - Tilfreds</label>
-          <label><input type="radio" name="faglighed" value="5"> 5 - Meget tilfreds</label>
-        </fieldset>
-
-        <fieldset class="formular-del">
-          <legend>Kommunikation og forklaring</legend>
-          <p class="hjaelpetekst">Hvor tilfreds var du med kommunikationen?<br>Vælg venligst <b>en</b> mulighed.</p>
-          <label><input type="radio" name="kommunikation" value="1" required> 1 - Ikke tilfreds</label>
-          <label><input type="radio" name="kommunikation" value="2"> 2 - Mindre tilfreds</label>
-          <label><input type="radio" name="kommunikation" value="3"> 3 - Neutral</label>
-          <label><input type="radio" name="kommunikation" value="4"> 4 - Tilfreds</label>
-          <label><input type="radio" name="kommunikation" value="5"> 5 - Meget tilfreds</label>
-        </fieldset>
-
-        <fieldset class="formular-del">
-          <legend>Øvelser og behandling</legend>
-          <p class="hjaelpetekst">Hvor tilfreds er du med øvelser, behandlingen og vejledningen?<br>Vælg venligst <b>en</b> mulighed.</p>
-          <label><input type="radio" name="vejledning" value="1" required> 1 - Ikke tilfreds</label>
-          <label><input type="radio" name="vejledning" value="2"> 2 - Mindre tilfreds</label>
-          <label><input type="radio" name="vejledning" value="3"> 3 - Neutral</label>
-          <label><input type="radio" name="vejledning" value="4"> 4 - Tilfreds</label>
-          <label><input type="radio" name="vejledning" value="5"> 5 - Meget tilfreds</label>
-        </fieldset>
-
-        <fieldset class="formular-del">
-          <legend>Hvor sandsynligt er det, at du vil anbefale os til andre?</legend>
-          <p class="hjaelpetekst">Vælg venligst <b>en</b> mulighed.</p>
-          <label><input type="radio" name="anbefaling" value="nej" required> 1 - Ikke sandsynligt</label>
-          <label><input type="radio" name="anbefaling" value="maaske"> 2 - Lidt sandsynligt</label>
-          <label><input type="radio" name="anbefaling" value="ja"> 3 - Meget sandsynligt</label>
-        </fieldset>
-
-        <fieldset class="formular-del">
-          <legend>Har du lyst til at uddybe din oplevelse? (Valgfrit)</legend>
-          <p class="hjaelpetekst">Her kan du uddybe din feedback med os med dine egne ord. <br>Det er <b>valgfrit</b> at udfylde dette felt.</p>
-          <label for="det-virkede-godt">Din feedback</label>
-          <textarea id="det-virkede-godt" name="positivFeedback" rows="4"></textarea>
-        </fieldset>
-
-        <section class="handlinger" aria-label="Formularhandlinger">
-          <button type="submit" class="knap knap--primaer">Send evaluering</button>
-        </section>
-
-      </form>
+  <main class="tak-side">
+    <section class="formular-ramme tak-kort" aria-labelledby="tak-overskrift">
+      <div class="tak-kort__ikon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" focusable="false">
+          <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </div>
+      <h2 id="tak-overskrift" class="tak-kort__titel">Din evaluering er sendt</h2>
+      <p class="tak-kort__tekst">
+        Tak fordi du tog dig tid til at dele din oplevelse hos Grocott Fysioterapi.
+        Din feedback hjælper med at forbedre behandlingen og servicen.
+      </p>
     </section>
   </main>
-
+  
   <footer class="sidefod">
     <div class="sidefod__indhold">
       <div class="sidefod__grid">
