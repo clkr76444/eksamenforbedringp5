@@ -1,33 +1,37 @@
-// Henter formular-elementet via id'et fra HTML, så vi kan arbejde med submit i JavaScript.
+// Henter formular-elementet fra HTML, så vi kan styre submit-flowet i JavaScript.
 const form = document.getElementById("evalueringsSkema");
 
+// Små hjælpefunktioner til gyldighedstjek og browserens valideringsbeskeder.
+const isFormValid = (formElement) => formElement.checkValidity();
+const showValidationMessages = (formElement) => formElement.reportValidity();
+
 if (form) {
-  // Registrerer en submit-listener, så vi kan kontrollere flowet før browserens standard-submit.
+  // Registrerer en submit-listener, så vi kan kontrollere flowet før standard-submit.
   form.addEventListener("submit", (event) => {
-    // Stopper standardopførsel (direkte submit/reload), så vi kan validere først.
+    // Stopper standard-submit/reload, så vi kan validere først.
     event.preventDefault();
 
     // Tjekker om alle required-felter er gyldige.
-    if (!form.checkValidity()) {
-      // Viser browserens indbyggede valideringsbeskeder til brugeren.
-      form.reportValidity();
-      // Stopper funktionen her, så ugyldig formular ikke går videre.
+    if (!isFormValid(form)) {
+      // Viser browserens indbyggede valideringsbeskeder.
+      showValidationMessages(form);
+      // Stopper her, så ugyldige formularer ikke fortsætter.
       return;
     }
 
-    // Opretter et FormData-objekt med alle felter fra formularen.
+    // Opretter FormData med alle aktuelle formularfelter.
     const formData = new FormData(form);
     // Henter en enkelt værdi ud fra feltets name-attribut.
     const navn = formData.get("navn");
-    // Henter den valgte værdi fra service-radiofeltet.
+    // Henter valgt værdi fra service-radiofeltet.
     const serviceRating = formData.get("service");
 
-    // Demo-output i konsollen, så man kan verificere at data er læst korrekt.
+    // Demo-output i konsollen, så man kan bekræfte dataopsamlingen.
     console.log("Brugeren har indtastet følgende:");
     console.log("Navn:", navn);
     console.log("Tilfredshed med service (1-5):", serviceRating);
 
-    // Når validering og dataopsamling er gennemført, sendes brugeren til takkesiden.
+    // Efter gyldig validering og dataopsamling sendes brugeren til takkesiden.
     window.location.href = "tak-for-feedback.html";
   });
 }
