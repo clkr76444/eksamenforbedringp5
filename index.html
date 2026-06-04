@@ -53,7 +53,7 @@
     <section class="formular-ramme">
         <!-- Introduktion som forklarer formål, varighed og anonymitet. -->
         <h2 class="formular-overskrift">Din oplevelse hos Grocott Fysioterapi</h2>
-        <p class="hjaelpetekst">Jeg sætter pris på din feedback!<br>Det tager <b>kun</b> 2 minutter at udfylde skemaet og det er anonymt, medmindre du selv skriver <span>dit navn eller e-mail.</span></p>
+        <p class="hjaelpetekst">Jeg sætter pris på din feedback!<br>Det tager <b>kun</b> 2 minutter at udfylde skemaet og det er <b>anonymt</b>, medmindre du selv skriver <span>dit navn eller e-mail.</span></p>
       
         <!-- Formular sender til takkesiden. Validering håndteres i formular.js før redirect. -->
         <form id="evalueringsSkema" action="tak-for-feedback.html" method="get">
@@ -72,7 +72,7 @@
         <!-- Samtykke til evt. visning af anmeldelse på hjemmesiden. -->
         <fieldset class="formular-del">
           <legend>Tilladelse til visning af anmeldelse</legend>
-            <p class="hjaelpetekst">Må jeg bruge din feedback på klinikkens hjemmesiden? <br>Vælg venligst <b>en</b> mulighed.</p>
+            <p class="hjaelpetekst">Må jeg bruge din feedback på klinikkens hjemmesiden?</p>
 
           <label>
             <input type="radio" name="hjemmesideTilladelse" value="nej">
@@ -88,7 +88,7 @@
         <!-- Obligatorisk ratingspørgsmål: service. -->
         <fieldset class="formular-del">
           <legend>Modtagelse og service</legend>
-          <p class="hjaelpetekst">Hvor tilfreds var du med velkomsten og den generelle service i klinikken?<br>Vælg venligst <b>en</b> mulighed.</p>
+          <p class="hjaelpetekst">Hvor tilfreds var du med velkomsten og den generelle service i klinikken?</p>
           <label><input type="radio" name="service" value="1" required> 1 - Ikke tilfreds</label>
           <label><input type="radio" name="service" value="2"> 2 - Mindre tilfreds</label>
           <label><input type="radio" name="service" value="3"> 3 - Neutral</label>
@@ -99,7 +99,7 @@
         <!-- Obligatorisk ratingspørgsmål: faglighed. -->
         <fieldset class="formular-del">
           <legend>Faglighed i behandlingen</legend>
-          <p class="hjaelpetekst">Hvor tilfreds var du med fagligheden i behandlingen?<br>Vælg venligst <b>en</b> mulighed.</p>
+          <p class="hjaelpetekst">Hvor tilfreds var du med fagligheden i behandlingen?</p>
           <label><input type="radio" name="faglighed" value="1" required> 1 - Ikke tilfreds</label>
           <label><input type="radio" name="faglighed" value="2"> 2 - Mindre tilfreds</label>
           <label><input type="radio" name="faglighed" value="3"> 3 - Neutral</label>
@@ -110,7 +110,7 @@
         <!-- Obligatorisk ratingspørgsmål: kommunikation. -->
         <fieldset class="formular-del">
           <legend>Kommunikation og forklaring</legend>
-          <p class="hjaelpetekst">Hvor tilfreds var du med kommunikationen?<br>Vælg venligst <b>en</b> mulighed.</p>
+          <p class="hjaelpetekst">Hvor tilfreds var du med kommunikationen?</p>
           <label><input type="radio" name="kommunikation" value="1" required> 1 - Ikke tilfreds</label>
           <label><input type="radio" name="kommunikation" value="2"> 2 - Mindre tilfreds</label>
           <label><input type="radio" name="kommunikation" value="3"> 3 - Neutral</label>
@@ -121,7 +121,7 @@
         <!-- Obligatorisk ratingspørgsmål: øvelser/vejledning. -->
         <fieldset class="formular-del">
           <legend>Øvelser og behandling</legend>
-          <p class="hjaelpetekst">Hvor tilfreds er du med øvelser, behandlingen og vejledningen?<br>Vælg venligst <b>en</b> mulighed.</p>
+          <p class="hjaelpetekst">Hvor tilfreds er du med øvelser, behandlingen og vejledningen?</p>
           <label><input type="radio" name="vejledning" value="1" required> 1 - Ikke tilfreds</label>
           <label><input type="radio" name="vejledning" value="2"> 2 - Mindre tilfreds</label>
           <label><input type="radio" name="vejledning" value="3"> 3 - Neutral</label>
@@ -131,8 +131,8 @@
 
         <!-- Obligatorisk anbefalingsspørgsmål. -->
         <fieldset class="formular-del">
-          <legend>Hvor sandsynligt er det, at du vil anbefale os til andre?</legend>
-          <p class="hjaelpetekst">Vælg venligst <b>en</b> mulighed.</p>
+          <legend>Anbefaling</legend>
+          <p class="hjaelpetekst">Hvor sandsynligt er det, at du vil anbefale os til andre?</p>
           <label><input type="radio" name="anbefaling" value="nej" required> 1 - Ikke sandsynligt</label>
           <label><input type="radio" name="anbefaling" value="maaske"> 2 - Lidt sandsynligt</label>
           <label><input type="radio" name="anbefaling" value="ja"> 3 - Meget sandsynligt</label>
